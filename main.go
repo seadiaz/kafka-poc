@@ -2,6 +2,8 @@ package main
 
 import (
 	"github.com/spf13/cobra"
+
+	"github.com/seadiaz/kafka-poc/kafka"
 )
 
 const topic = "topic-A"
@@ -42,7 +44,7 @@ func produceCommand(cmd *cobra.Command, args []string) {
 }
 
 func consumeCommand(cmd *cobra.Command, args []string) {
-	mainConsumer(args[0])
+	kafka.Run(args[0])
 }
 
 func init() {
